@@ -7,6 +7,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>9th Raikage Ahmed</title>
+      </head>
       <body>{children}</body>
     </html>
   );
