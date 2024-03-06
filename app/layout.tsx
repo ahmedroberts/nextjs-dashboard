@@ -11,7 +11,7 @@ export default function RootLayout({
       <head>
         <title>9th Raikage Ahmed</title>
       </head>
-      <body className={`${inter.className} antialiased`} >{children}</body>
+      <body className={`${inter.className} antialiased bg-ahmedColorScheme01-magnolia`} >{children}</body>
     </html>
   );
 }
