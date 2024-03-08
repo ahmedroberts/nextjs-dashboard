@@ -2,7 +2,10 @@ import React from 'react'
 
 const Invoices = () => {
   return (
-    <p>Invoices</p>
+    <div>
+      <h1>Invoices</h1>
+      <h3>Ahmed is the 9th Raikage! 🐂🐙</h3>
+    </div>
   )
 }
 

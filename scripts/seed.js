@@ -1,3 +1,4 @@
+// https://vercel.com/docs/storage/vercel-postgres/sdk | Learned alot here -Raikage
 const { db } = require('@vercel/postgres');
 const {
   invoices,

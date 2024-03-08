@@ -1,4 +1,6 @@
 import { sql } from '@vercel/postgres';
+// https://vercel.com/docs/storage/vercel-postgres/sdk | Learned alot here -Raikage
+
 import {
   CustomerField,
   CustomersTableType,
