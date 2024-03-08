@@ -1,15 +1,22 @@
 // This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
 // https://nextjs.org/learn/dashboard-app/fetching-data
+// Ahmed, The Raikage also added some on 2024-03-08
 const users = [
   {
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
-    name: 'User',
-    email: 'user@nextmail.com',
+    name: 'RaikageAhmed',
+    email: 'raikage@cloudvillage.io',
     password: '123456',
   },
 ];
 
 const customers = [
+  {
+    id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
+    name: 'Ahmed Roberts',
+    email: 'ahmed@roberts.com',
+    image_url: '/customers/ahmed-roberts.png',
+  },
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
     name: 'Delba de Oliveira',

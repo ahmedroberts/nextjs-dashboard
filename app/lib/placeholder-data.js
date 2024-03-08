@@ -8,21 +8,9 @@ const users = [
     email: 'user@nextmail.com',
     password: '123456',
   },
-  {
-    id: '910544q2-4001-4271-9855-zqj4b6x6999x',
-    name: 'RaikageAhmed',
-    email: 'raikage@cloudvillage.io',
-    password: '123456',
-  },
 ];
 
 const customers = [
-  {
-    id: '9958dc9e-742f-4377-85e9-zqj4b6x6942a',
-    name: 'Ahmed Roberts',
-    email: 'ahmed@roberts.com',
-    image_url: '/customers/ahmed-roberts.png',
-  },
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
     name: 'Delba de Oliveira',
