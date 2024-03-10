@@ -1,11 +1,12 @@
 import React from 'react'
+import { lusitana } from '@/app/ui/fonts'
 
 const Invoices = () => {
   return (
-    <div>
-      <h1>Invoices</h1>
+    <main>
+      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>Invoices</h1>
       <h3>Ahmed is the 9th Raikage! 🐂🐙</h3>
-    </div>
+    </main>
   )
 }
 

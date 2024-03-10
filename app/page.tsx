@@ -20,7 +20,7 @@ export default function Page() {
           {/* Added custom Tailwind color Scheme!! to tailwind.config.ts and implemented it below. text-ahmedColorScheme01-jade*/}
           <h1 className={`${ emilysCandy} antialiased text-ahmedColorScheme01-jade`}>Ahmed ~ The 9<sup>th</sup> Raikage.</h1>
           <p className={`${ lusitana.className } antialias text-xl md:text-3xl md:leading-normal`}>
-            <strong className="text-ahmedColorScheme01-ultra-violet">Welcome to Acme.</strong> This is the example for the{' '}
+            <strong className="text-ahmedColorScheme01-ultra-violet">Welcome to the Apogee Wealth UI.</strong> This is the example for the{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
               Next.js Learn Course
             </a>

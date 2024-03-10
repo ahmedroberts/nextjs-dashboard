@@ -1,9 +1,13 @@
 import { Card } from '@/app/ui/dashboard/cards';
 import RevenueChart from '@/app/ui/dashboard/revenue-chart';
-import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
+// import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
+import LatestInvoicesAOR from '../ui/dashboard/latest-invoices-aor';
 import { lusitana } from '@/app/ui/fonts';
- 
+import { fetchRevenue, fetchLatestInvoices } from '@/app/lib/data';
+
 export default async function Page() {
+  const revenue = await fetchRevenue();
+  const latestInvoices = fetchLatestInvoices();
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
@@ -20,10 +24,11 @@ export default async function Page() {
         /> */}
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        {/* <RevenueChart revenue={revenue}  /> */}
+        <RevenueChart revenue={revenue} />
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
+        <LatestInvoicesAOR />
       </div>
-      <h3>Ahmed is the 9th Raikage! 🐂🐙</h3>
+      <h3 className="mt-5 p-5 bg-ahmedColorScheme01-jade">Ahmed is the 9th Raikage! 🐂🐙</h3>
     </main>
   );
 }
