@@ -39,7 +39,7 @@ export default async function LatestInvoicesAOR() {
                 <p
                   className={`${lusitana.className} truncate text-sm font-medium md:text-base`}
                 >
-                  1579.99
+                  $1579.99
                 </p>
               </div>        
         </div>
