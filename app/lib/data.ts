@@ -96,7 +96,7 @@ export async function fetchCardData() {
   }
 }
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 9;
 export async function fetchFilteredInvoices(
   query: string,
   currentPage: number,
@@ -125,7 +125,10 @@ export async function fetchFilteredInvoices(
       ORDER BY invoices.date DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
-
+    {/*
+      OFFSET in TSQL for my reference || Order By, OFFSET, NEXT
+      https://learn.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql?view=sql-server-ver16
+    */}
     return invoices.rows;
   } catch (error) {
     console.error('Database Error:', error);
