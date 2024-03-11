@@ -2,6 +2,7 @@
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
 
 // https://nextjs.org/learn/dashboard-app/adding-search-and-pagination 
 // Learned alot - Raikage
@@ -11,7 +12,8 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  function handleSearch(term:string) {
+  // function handleSearch(term:string) {
+  const handleSearch = useDebouncedCallback((term: string) => {
     console.log(`Searching... ${term}`)
     const params = new URLSearchParams(searchParams);
     if (term) {
@@ -22,7 +24,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     replace(`${pathname}?${params.toString()}`);
     // Check out the search parameters
     // console.log(params.toString());
-  }
+  }, 300);
   return (
     <div className="relative flex flex-1 flex-shrink-0">
       <label htmlFor="search" className="sr-only">
