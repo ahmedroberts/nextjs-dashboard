@@ -28,11 +28,19 @@ export async function createInvoice(formData: FormData) {
     // format date as YYYY-MM-DD
     const date = new Date().toISOString().split('T')[0];
     
-    // Now that everything is validated import it into the database
-    await sql`
-        INSERT INTO invoices (customer_id, amount, status, date)
-        VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
-    `;
+    // Add try/catch statement with error message
+    try {
+      // Now that everything is validated import it into the database
+      await sql`
+          INSERT INTO invoices (customer_id, amount, status, date)
+          VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
+      `;
+    } 
+    catch (error) {
+      return {
+        message: 'Database Error, Raikage: Failed to Create Invoice.',
+      };
+    }
 
     // Database is updated so now want to clear cache and update that path Invoices
     revalidatePath('/dashboard/invoices');
@@ -49,11 +57,15 @@ export async function updateInvoice(id: string, formData: FormData) {
  
   const amountInCents = amount * 100;
  
-  await sql`
+  try {
+    await sql`
     UPDATE invoices
     SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
     WHERE id = ${id}
   `;
+  } catch (error) {
+    return { message: 'Database Error, Raikage: Failed to Update Invoice.' };
+  }
  
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
@@ -61,8 +73,13 @@ export async function updateInvoice(id: string, formData: FormData) {
 
 // Delete an Invoice
 export async function deleteInvoice(id: string) {
+  try {
     await sql`DELETE FROM invoices WHERE id = ${id}`;
     revalidatePath('/dashboard/invoices');
+    return { message: 'Deleted Invoice.'}
+  } catch (error) {
+    return { message: 'Database Error, Raikage: Failed to Delete Invoice.' };
+  }
   }
   
 /* 
