@@ -3,7 +3,6 @@ import ApogeeWealthLogo from '@/app/ui/apogee-wealth-logo';
 import { lusitana, emilysCandy } from './ui/fonts';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import clouded from '@/app/ui/home.module.css';
 import Image from 'next/image';
 // Learning From Next.js
 // https://nextjs.org/learn/dashboard-app/css-styling
@@ -41,13 +40,6 @@ export default function Page() {
             <span>Dashboard</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>
         </div>
-        {/* CSS Triangle */}
-        <div className={clouded.triangle} />
-        {/* Tailwind CSS Triangle */}
-        <div className="h-0 w-0 border-b-[30px] border-l-[20px] border-r-[20px] border-b-black border-l-transparent 
-        border-r-transparent"/>
-        <div className="h-0 w-0 border-b-[30px] border-l-[20px] border-r-[20px] border-b-ahmedColorScheme01-jade border-l-transparent 
-        border-r-transparent rotate-12"/>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
           <Image
